@@ -4,7 +4,8 @@ Thanks for making time. This is a live working session, not homework: you will d
 of the job together with us, on a screen share, in about **75 minutes**.
 
 Everything here is **fictional**: the company, people, data and code were made up for this exercise
-and contain no real information.
+and contain no real information. Even so, please work the way you would with real production
+material: the habits you show are part of what we're looking at.
 
 ## Before the call (about 10 minutes, once)
 
