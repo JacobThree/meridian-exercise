@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Meridian Study - API host (fictional)
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+
+Resources:
+  ApiSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: api host
+      VpcId: vpc-0abc1234def567890
+      SecurityGroupIngress:
+        - { IpProtocol: tcp, FromPort: 22,   ToPort: 22,   CidrIp: 0.0.0.0/0 }
+        - { IpProtocol: tcp, FromPort: 443,  ToPort: 443,  CidrIp: 0.0.0.0/0 }
+        - { IpProtocol: tcp, FromPort: 3306, ToPort: 3306, CidrIp: 0.0.0.0/0 }
+
+  ApiInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0123456789abcdef0
+      InstanceType: t3.large
+      KeyName: !Ref KeyName
+      SecurityGroupIds: [!Ref ApiSecurityGroup]
+      SubnetId: subnet-0aaa1111bbb22222c
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 200
+            Encrypted: false
+      MetadataOptions:
+        HttpTokens: optional
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          export DB_PASSWORD='FAKE-Winter2026!'
+          export JWT_SECRET='FAKE-not-a-real-secret'
+          cd /srv/api && npm ci && pm2 start dist/main.js
+
+  AppLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /meridian/api
+
+  ExportsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: meridian-study-participant-exports

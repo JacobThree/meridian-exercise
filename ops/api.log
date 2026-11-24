@@ -1,0 +1,67 @@
+2026-11-18T02:05:02.091Z LOG   [HTTP] GET /metrics/today 200 177ms userId=25
+2026-11-18T03:15:29.269Z LOG   [HTTP] GET /metrics/today 200 180ms userId=11
+2026-11-18T06:34:32.099Z LOG   [HTTP] POST /checkins 200 134ms userId=3
+2026-11-18T07:36:17.343Z LOG   [HTTP] GET /metrics/today 200 182ms userId=52
+2026-11-18T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-18T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-18T10:00:02.986Z LOG   [ReminderJob] candidates=11 sent=11 failed=0
+2026-11-18T10:06:32.074Z LOG   [HTTP] GET /checkins/history 200 59ms userId=40
+2026-11-18T10:46:22.958Z LOG   [HTTP] GET /metrics/today 200 44ms userId=1
+2026-11-18T20:44:20.066Z LOG   [HTTP] POST /checkins 200 26ms userId=38
+2026-11-19T00:16:28.386Z LOG   [HTTP] GET /checkins/history 200 180ms userId=4
+2026-11-19T04:03:30.292Z LOG   [HTTP] POST /checkins 200 53ms userId=56
+2026-11-19T07:03:38.873Z LOG   [HTTP] POST /checkins 200 109ms userId=57
+2026-11-19T09:09:43.535Z LOG   [HTTP] GET /metrics/today 200 53ms userId=24
+2026-11-19T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-19T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-19T10:00:01.240Z WARN  [ReminderJob] push failed for user 17: provider 410 DeviceNotRegistered
+2026-11-19T10:00:02.288Z LOG   [ReminderJob] candidates=10 sent=9 failed=1
+2026-11-19T12:56:19.378Z LOG   [HTTP] POST /checkins 200 46ms userId=24
+2026-11-19T13:18:07.890Z LOG   [HTTP] POST /auth/refresh 200 78ms userId=16
+2026-11-19T13:51:48.664Z LOG   [HTTP] GET /checkins/history 200 68ms userId=60
+2026-11-19T14:02:11.998Z DEBUG [TypeOrmQuery] query: UPDATE "oauth_token" SET "access_token" = 'FAKE-oura-at-4f9c2e71aa05', "refresh_token" = 'FAKE-oura-rt-81d03b66e2c7', "updated_at" = NOW() WHERE "id" = 912
+2026-11-20T01:04:12.118Z LOG   [HTTP] POST /auth/refresh 200 135ms userId=31
+2026-11-20T02:36:13.762Z LOG   [HTTP] POST /checkins 200 134ms userId=33
+2026-11-20T04:00:02.414Z LOG   [HTTP] POST /auth/refresh 200 34ms userId=30
+2026-11-20T04:17:16.931Z LOG   [HTTP] POST /auth/refresh 200 55ms userId=32
+2026-11-20T06:56:47.454Z LOG   [HTTP] GET /metrics/today 200 103ms userId=5
+2026-11-20T08:24:04.121Z LOG   [HTTP] POST /auth/refresh 200 26ms userId=28
+2026-11-20T09:14:40.984Z DEBUG [AuthService] refresh ok email=participant17@example.test authorization=Bearer eyJhbGciOiJIUzI1NiJ9.FAKE.FAKE
+2026-11-20T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-20T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-20T10:00:02.221Z LOG   [ReminderJob] candidates=9 sent=9 failed=0
+2026-11-20T17:04:54.058Z LOG   [HTTP] GET /metrics/today 200 153ms userId=16
+2026-11-21T03:01:29.946Z LOG   [HTTP] GET /metrics/today 200 130ms userId=31
+2026-11-21T03:05:00.032Z ERROR [GarminClient] 200 OK but body empty userId=31 (0 dailies)
+2026-11-21T06:12:47.103Z LOG   [HTTP] GET /metrics/today 200 65ms userId=33
+2026-11-21T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-21T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-21T10:00:01.486Z WARN  [ReminderJob] push failed for user 33: provider 410 DeviceNotRegistered
+2026-11-21T10:00:02.493Z LOG   [ReminderJob] candidates=9 sent=8 failed=1
+2026-11-21T10:13:02.122Z LOG   [HTTP] GET /metrics/today 200 28ms userId=43
+2026-11-21T15:43:24.534Z LOG   [HTTP] GET /checkins/history 200 72ms userId=34
+2026-11-21T16:29:37.210Z LOG   [HTTP] GET /metrics/today 200 36ms userId=41
+2026-11-21T16:46:55.826Z LOG   [HTTP] POST /checkins 200 30ms userId=51
+2026-11-21T20:29:36.061Z LOG   [HTTP] POST /auth/refresh 200 39ms userId=40
+2026-11-22T01:10:22.680Z LOG   [HTTP] POST /checkins 200 138ms userId=35
+2026-11-22T06:36:59.612Z LOG   [HTTP] POST /checkins 200 15ms userId=45
+2026-11-22T09:22:07.668Z LOG   [HTTP] GET /checkins/history 200 171ms userId=12
+2026-11-22T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-22T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-22T10:00:02.870Z LOG   [ReminderJob] candidates=8 sent=8 failed=0
+2026-11-22T11:43:26.672Z LOG   [HTTP] GET /checkins/history 200 105ms userId=48
+2026-11-22T16:31:05.773Z WARN  [OuraClient] 429 rate limited, retry in 60s userId=23
+2026-11-22T16:32:06.329Z LOG   [OuraClient] retry ok userId=23
+2026-11-22T16:41:34.222Z LOG   [HTTP] GET /checkins/history 200 126ms userId=58
+2026-11-22T18:44:17.481Z LOG   [HTTP] GET /checkins/history 200 175ms userId=58
+2026-11-22T22:01:29.396Z LOG   [HTTP] GET /metrics/today 200 48ms userId=9
+2026-11-23T00:27:32.067Z LOG   [HTTP] POST /auth/refresh 200 70ms userId=24
+2026-11-23T01:18:26.859Z LOG   [HTTP] POST /auth/refresh 200 46ms userId=19
+2026-11-23T02:24:41.169Z LOG   [HTTP] GET /checkins/history 200 184ms userId=26
+2026-11-23T06:58:24.204Z LOG   [HTTP] GET /metrics/today 200 160ms userId=20
+2026-11-23T10:00:00.004Z LOG   [Scheduler] cron 0 10 * * * tz=UTC firing ReminderJob
+2026-11-23T10:00:00.009Z LOG   [ReminderJob] start
+2026-11-23T10:00:02.231Z LOG   [ReminderJob] candidates=22 sent=22 failed=0
+2026-11-23T17:07:41.277Z LOG   [HTTP] GET /metrics/today 200 127ms userId=13
+2026-11-23T17:22:08.217Z LOG   [HTTP] POST /auth/refresh 200 183ms userId=24
+2026-11-23T22:37:04.853Z LOG   [HTTP] POST /checkins 200 60ms userId=58

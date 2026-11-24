@@ -1,0 +1,23 @@
+# Not an active workflow in this repo: this is the deploy pipeline the team uses on their real repo.
+name: deploy
+on:
+  push:
+    branches: ['**']
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm run build
+        working-directory: api
+      - name: Configure AWS
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set region us-east-1
+      - name: Deploy to prod
+        run: |
+          echo "${{ secrets.PROD_SSH_KEY }}" > key.pem && chmod 600 key.pem
+          scp -o StrictHostKeyChecking=no -i key.pem -r api/dist ec2-user@api.meridian.example:/srv/api/
+          ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@api.meridian.example 'pm2 reload all'
