@@ -4,7 +4,7 @@ Northwind Digital, the outside vendor, says card **MS-142** is done and wants yo
 so they can invoice. You own the decision.
 
 ```bash
-git diff main..vendor/streak-counter
+git diff main..origin/vendor/streak-counter
 ```
 
 Read `cards/MS-142.md` for the acceptance criteria. You do not have to run the code; you may.

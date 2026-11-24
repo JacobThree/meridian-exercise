@@ -16,7 +16,7 @@ install Node or any dependencies.
 ```bash
 git clone <URL we sent you> meridian-exercise
 cd meridian-exercise
-git branch -a                      # you should see main and vendor/streak-counter
+git branch -a                      # you should see main and remotes/origin/vendor/streak-counter
 sqlite3 data/fixture.db ".tables"  # or open the CSVs; you should see 4 tables
 ```
 
